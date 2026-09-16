@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To My Love ❤️</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      min-height: 100vh;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #12001f, #3b0a45, #160020);
+      color: white;
+      overflow-x: hidden;
+      text-align: center;
+    }
+    .stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+      background-size: 70px 70px, 110px 110px;
+      background-position: 10px 20px, 40px 60px;
+      opacity: .25;
+    }
+    .page {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      padding: 35px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .heart {
+      font-size: 65px;
+      animation: heartbeat 1.5s infinite;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+    h1 {
+      font-size: clamp(38px, 9vw, 70px);
+      margin: 15px 0;
+      background: linear-gradient(90deg, #ff8acb, #fff, #ff8acb);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .subtitle {
+      font-size: 19px;
+      opacity: .85;
+      max-width: 650px;
+      line-height: 1.7;
+    }
+    .card {
+      max-width: 650px;
+      width: 100%;
+      margin-top: 35px;
+      padding: 30px;
+      border-radius: 25px;
+      background: rgba(255,255,255,.09);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.15);
+      box-shadow: 0 20px 60px rgba(0,0,0,.3);
+    }
+    .card h2 {
+      margin-bottom: 15px;
+      color: #ff9ed3;
+    }
+    .card p {
+      line-height: 1.9;
+      font-size: 17px;
+      opacity: .95;
+    }
+    .miss {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 25px;
+    }
+    .miss div {
+      padding: 15px;
+      border-radius: 15px;
+      background: rgba(255,255,255,.08);
+    }
+    button {
+      margin-top: 30px;
+      border: none;
+      padding: 15px 28px;
+      border-radius: 50px;
+      background: linear-gradient(90deg, #ff4fa3, #ff79c6);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(255,79,163,.3);
+      transition: .3s;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    #surprise {
+      display: none;
+      margin-top: 25px;
+      animation: fade .8s ease;
+    }
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .final {
+      margin-top: 30px;
+      font-size: 20px;
+      color: #ffb5dc;
+      line-height: 1.7;
+    }
+    .floating-heart {
+      position: fixed;
+      bottom: -30px;
+      font-size: 22px;
+      animation: floatUp 7s linear infinite;
+      opacity: .7;
+      z-index: 1;
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+      20% { opacity: .8; }
+      100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+      }
+    }
+    @media (max-width: 600px) {
+      .card {
+        padding: 23px;
+      }
+      .miss {
+        grid-template-columns: 1fr;
+      }
+      .subtitle {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="stars"></div>
+<div class="page">
+  <div class="heart">❤️</div>
+  <h1>Happy Birthday, My Love</h1>
+  <p class="subtitle">
+    Even though you're far away from me today,
+    you're still the closest person to my heart. 🌍❤️
+  </p>
+  <div class="card">
+    <h2>For You, From Me 💌</h2>
+    <p>
+      I wish I could be there beside you today,
+      hold your hand, look at you and say
+      "Happy Birthday" in person.
+      <br><br>
+      But distance doesn't change how much I love you.
+      If anything, being away from you makes me realize
+      every single day how much you mean to me.
+      <br><br>
+      I miss your smile, your voice, your hugs,
+      your silly little things and simply having you
+      next to me.
+    </p>
+    <div class="miss">
+      <div>🥺 Your Smile</div>
+      <div>💗 Your Hugs</div>
+      <div>🫶 Your Voice</div>
+      <div>🌙 Our Late Talks</div>
+    </div>
+    <button onclick="showSurprise()">
+      🎁 Open My Surprise
+    </button>
+    <div id="surprise">
+      <p class="final">
+        No matter how many miles are between us,
+        my heart will always find its way back to you. ❤️
+        <br><br>
+        One day, I won't have to miss you through a screen.
+        I'll be right there beside you.
+        <br><br>
+        Until that day...
+        <br>
+        <b>I love you. I miss you. Always. ❤️</b>
+      </p>
+    </div>
+  </div>
+</div>
+<script>
+function showSurprise() {
+  document.getElementById("surprise").style.display = "block";
+  for (let i = 0; i < 20; i++) {
+    createHeart();
+  }
+}
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.innerHTML = ["❤️","💕","💗","💖","💘"][
+    Math.floor(Math.random() * 5)
+  ];
+  heart.className = "floating-heart";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => {
+    heart.remove();
+  }, 8000);
+}
+setInterval(createHeart, 1800);
+</script>
+</body>
+</html>
